@@ -10,7 +10,7 @@ The system is built using an ESP32 microcontroller, making it suitable for smart
 ## 2. Components Required
 * ESP32 Development Board
 * ACS712 Current Sensor
-* Voltage Sensor Module
+* ZMPT101B Voltage Sensor Module
 * 16×2 I2C LCD Display
 * Breadboard
 * Connecting Wires
@@ -43,31 +43,31 @@ Load → Current Sensor → ESP32 → LCD Display & Blynk Cloud
 * SCL → GPIO 22
 
 ### 4.4 Load Connection
-* Connect the **bulb (load)** in series with the **current sensor**
-* Connect the **voltage sensor** across the main power supply
+* Connect the bulb (load) in series with the current sensor
+* Connect the ZMPT101B voltage sensor across the main power supply
 
 ### 4.5 Programming Connection
-* Connect ESP32 to the computer using a **USB cable** for uploading code
+* Connect ESP32 to the computer using a USB cable for uploading code
 
 
 
 ## 5. Working Principle
-1. The **voltage sensor** measures the line voltage.
-2. The **ACS712 current sensor** measures the current drawn by the load.
+1. The ZMPT101B voltage sensor measures the line voltage.
+2. The ACS712 current sensor measures the current drawn by the load.
 3. ESP32 reads analog values and calculates:
    * Voltage (V)
    * Current (A)
    * Power (W = V × I)
    * Energy Consumption (Units in kWh)
    * Total Cost (based on tariff)
-4. Values are displayed on the **16×2 LCD**.
-5. The same data is sent to the **Blynk Web Dashboard** for real-time monitoring.
+4. Values are displayed on the 16×2 LCD.
+5. The same data is sent to the Blynk Web Dashboard for real-time monitoring.
 
 
 
 ## 6. Blynk Web Dashboard Configuration
 ### 6.1 Create Blynk Template
-* Go to **Blynk Cloud → New Template**
+* Go to Blynk Cloud → New Template
 * Template Name: *Smart Energy Meter*
 * Hardware: ESP32
 * Connection Type: Wi-Fi
